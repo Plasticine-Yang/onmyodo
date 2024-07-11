@@ -1,0 +1,43 @@
+{
+  "name": "onmyodo-monorepo",
+  "private": true,
+  "author": "Plasticine-Yang",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev --filter=./packages/*",
+    "build": "turbo build --filter=./packages/*",
+    "lint": "turbo lint --filter=./packages/*",
+    "play": "turbo dev --filer=./apps/playground",
+    "test": "vitest",
+    "test:u": "vitest -u",
+    "release": "pnpm build && pnpm changeset publish",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@plasticine-yang/eslint-config-typescript": "^0.1.8",
+    "@types/node": "^20.14.10",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.9.3",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "taze": "^0.14.2",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.2",
+    "turbo": "^2.0.6",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.2"
+  },
+  "packageManager": "pnpm@9.5.0"
+}
